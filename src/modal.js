@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { ModalContext } from "./modalContext";
+import { createPortal } from "react-dom";
 
 const Modal = () => {
   let { modalContent, handleModal, modal } = React.useContext(ModalContext);
   if (modal) {
-    return ReactDOM.createPortal(
+    return createPortal(
       <div
         className="fixed top-0 left-0 h-screen w-full flex items-center justify-center"
         style={{ background: "rgba(0,0,0,0.8)" }}
